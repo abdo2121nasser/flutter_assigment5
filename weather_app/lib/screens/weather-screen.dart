@@ -20,17 +20,16 @@ class WeatherScreen extends StatelessWidget {
         },
         builder: (context, state) {
           var cubit = WeatherCubit.get(context);
-          //cubit.printname();
-          //var temp=cubit.temp;
           return Scaffold(
             body:  cubit.weatherModel!=null?
             Center(
               child: Stack(
                 children: [
-                  Image.asset(cubit.weatherModel!.current!.tempC!.toInt()>19?Constants.kSunnyImage:Constants.kWinterImage, fit: BoxFit.fill,),
+                  Image.asset(cubit.weatherModel!.current!.tempC!.toInt()>19?Constants.kSunnyImage:Constants.kWinterImage, fit: BoxFit.fill,height: double.maxFinite,),
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      const SizedBox(height: 50,),
+
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
@@ -56,9 +55,7 @@ class WeatherScreen extends StatelessWidget {
                               ),),)
                         ],
                       ),
-                      SizedBox(
-                        height: 200,
-                      ),
+
                       DetailBlock()
                     ],
                   )
