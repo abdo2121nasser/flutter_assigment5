@@ -27,9 +27,9 @@ class WeatherScreen extends StatelessWidget {
                 children: [
                   Image.asset(cubit.weatherModel!.current!.tempC!.toInt()>19?Constants.kSunnyImage:Constants.kWinterImage, fit: BoxFit.fill,height: double.maxFinite,),
                 Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
 
+                    children: [
+SizedBox(height: 40,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
@@ -55,8 +55,9 @@ class WeatherScreen extends StatelessWidget {
                               ),),)
                         ],
                       ),
-
-                      DetailBlock()
+Spacer(),
+                      DetailBlock(),
+                      SizedBox(height: 30,)
                     ],
                   )
                 ],
